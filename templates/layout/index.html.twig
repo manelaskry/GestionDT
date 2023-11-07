@@ -1,130 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Coding by CodingNepal | www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trello Clone</title>
+    <title> Drop Down Sidebar Menu | CodingLab </title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-<div class="app">
-
-    <!-- Main Header -->
-    <header class="app-header">
-        <div class="left">
-            <div class="btn"><i class="fas fa-home"></i></div>
-            <div class="btn btn-text"><i class="fab fa-trello"></i> Boards</div>
-            <div class="btn search">
-                Search
-                <i class="fas fa-search"></i>
-            </div>
-        </div>
-        <div class="center">
-            <div class="logo"><i class="fab fa-trello"></i> Trello Clone</div>
-        </div>
-        <div class="right">
-            <div class="btn"><i class="fas fa-plus"></i></div>
-            <div class="btn"><i class="fas fa-info-circle"></i></div>
-            <div class="btn"><i class="far fa-bell"></i></div>
-            <div class="btn"><i class="fas fa-cog"></i></div>
-            <div class="btn"><i class="fas fa-user-tie"></i></div>
-        </div>
-    </header>
-
-    <!-- App Board -->
-    <main class="app-board">
-        <header class="board-header">
-            <div class="left">
-                <div class="title">Your board title</div>
-                <div class="btn"><i class="far fa-star"></i></div>
-                <div class="btn">Personal</div>
-                <div class="btn btn-text"><i class="fas fa-lock"></i> Private</div>
-            </div>
-            <div class="right">
-                <div class="btn btn-text"><i class="fas fa-male"></i> Butler</div>
-                <div class="btn btn-text"><i class="fas fa-ellipsis-h"></i> Menu</div>
-            </div>
-        </header>
-
-        <!-- Board -->
-        <section class="board-body">
-            <div class="wrap-lists">
-                <div class="board-col">
-                    <div class="list">
-                        <h4 class="list-title">List title</h4>
-                        <div class="card">Card 1</div>
-                        <div class="card">Card 2</div>
-                        <div class="card">Card 3</div>
-                        <div class="card">Card 4</div>
-                        <div class="card">Card 5</div>
-                        <div class="card">Card 6</div>
-                        <div class="card">Card 7</div>
-                        <div class="card">Card 8</div>
-                        <div class="card">Card 9</div>
-                        <div class="card">Card 10</div>
-                        <a class="btn-list" href="#">+ Add another card</a>
-                    </div>
-                </div>
-                <div class="board-col">
-                    <div class="list">
-                        <h4 class="list-title">List title</h4>
-                        <div class="card">Card 1</div>
-                        <div class="card">Card 2</div>
-                        <div class="card">Card 3</div>
-                        <div class="card">Card 4</div>
-                        <div class="card">Card 5</div>
-                        <div class="card">Card 6</div>
-                        <a class="btn-list" href="#">+ Add another card</a>
-                    </div>
-                </div>
-                <div class="board-col">
-                    <div class="list">
-                        <h4 class="list-title">List title</h4>
-                        <div class="card">Card 1</div>
-                        <div class="card">Card 2</div>
-                        <div class="card">Card 3</div>
-                        <div class="card">Card 4</div>
-                        <a class="btn-list" href="#">+ Add another card</a>
-                    </div>
-                </div>
-                <div class="board-col">
-                    <div class="list">
-                        <h4 class="list-title">List title</h4>
-                        <div class="card">Card 1</div>
-                        <div class="card">Card 2</div>
-                        <div class="card">Card 3</div>
-                        <div class="card">Card 4</div>
-                        <div class="card">Card 5</div>
-                        <div class="card">Card 6</div>
-                        <div class="card">Card 7</div>
-                        <a class="btn-list" href="#">+ Add another card</a>
-                    </div>
-                </div>
-                <div class="board-col">
-                    <div class="list">
-                        <h4 class="list-title">List title</h4>
-                        <div class="card">Card 1</div>
-                        <div class="card">Card 2</div>
-                        <div class="card">Card 3</div>
-                        <a class="btn-list" href="#">+ Add another card</a>
-                    </div>
-                </div>
-                <div class="board-col">
-                    <div class="list">
-                        <a class="btn-list" href="#">+ Add another list</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- App Tint -->
-    <div class="app-tint">
-        <input type="color" id="app-color">
-        <label for="app-color"><i class="fas fa-tint"></i></label>
-    </div>
+<div class="nav">
+    <span class="logo">TaskPlanner</span>
 </div>
+<div class="sidebar close">
+    <div class="logo-details">
+        <i class='bx bxl-c-plus-plus'></i>
+        <span class="logo_name">TaskPlanner</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="#">
+                <i class='bx bx-grid-alt' ></i>
+                <span class="link_name">Acceuil</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Category</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-collection' ></i>
+                    <span class="link_name">Category</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">Category</a></li>
+                <li><a href="#">HTML & CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">PHP & MySQL</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-book-alt' ></i>
+                    <span class="link_name">Posts</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">Posts</a></li>
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">Login Form</a></li>
+                <li><a href="#">Card Design</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-plug' ></i>
+                    <span class="link_name">Plugins</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">Plugins</a></li>
+                <li><a href="#">UI Face</a></li>
+                <li><a href="#">Pigments</a></li>
+                <li><a href="#">Box Icons</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-cog' ></i>
+                <span class="link_name">Setting</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Setting</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="profile-details">
+                <div class="profile-content">
+                    <img src="image/profile.jpg" alt="profileImg">
+                </div>
+                <div class="name-job">
+                    <div class="profile_name">Prem Shahi</div>
+                    <div class="job">Web Desginer</div>
+                </div>
+                <i class='bx bx-log-out' ></i>
+            </div>
+        </li>
+    </ul>
+</div>
+<section class="home-section">
+    <div class="home-content">
+        <i class='bx bx-menu' ></i>
+    </div>
+</section>
+<script>
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+        arrow[i].addEventListener("click", (e)=>{
+            let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+            arrowParent.classList.toggle("showMenu");
+        });
+    }
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".bx-menu");
+    console.log(sidebarBtn);
+    sidebarBtn.addEventListener("click", ()=>{
+        sidebar.classList.toggle("close");
+    });
+</script>
 </body>
 </html>
