@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- Coding by CodingNepal | www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ asset('css/popup.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="modal">
+    <div class="modal-container">
+        <div class="modal-left">
+            <h1 class="modal-title">Welcome!</h1>
+            <p class="modal-desc">Stimulez votre productivité en facilitant l'accès aux tableaux pour tous au même endroit.</p>
+            <div class="input-block">
+                <label for="projet" class="input-label">Nom du projet</label>
+                <input type="text" name="projet" id="projet" placeholder="Name...">
+            </div>
+
+            <div  class="input-block">
+                <label for="choisir" class="input-label">type d'espace de travail</label>
+                <select name="projet"  class="select" id="projet"  >
+                    <option disabled selected ></option>
+                    <option value="Education" class="option">Education</option>
+                    <option value="Education" class="option">Entreprise</option>
+                    <option value="Education" class="option">Ingenieur</option>
+                    <option value="Education" class="option">Autre</option>
+                </select>
+            </div>
+            <div class="input-block " id="Description">
+                <label for="Description" class="input-label">Description de l'espace de travail *</label>
+                <input type="text" name="Description"  placeholder="Description...">
+            </div>
+            <div class="modal-buttons">
+                <button class="input-button">Continuer</button>
+            </div>
+        </div>
+        <div class="modal-right">
+            <img src="https://images.ctfassets.net/rz1oowkt5gyp/75rDABL8fyMtNLlUAtBxrg/c5e145977a86c41c47e17c69410c64f7/TrelloUICollage_4x.png?w=540" alt="">
+        </div>
+        <button class="icon-button close-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                <path d="M 25 3 C 12.86158 3 3 12.86158 3 25 C 3 37.13842 12.86158 47 25 47 C 37.13842 47 47 37.13842 47 25 C 47 12.86158 37.13842 3 25 3 z M 25 5 C 36.05754 5 45 13.94246 45 25 C 45 36.05754 36.05754 45 25 45 C 13.94246 45 5 36.05754 5 25 C 5 13.94246 13.94246 5 25 5 z M 16.990234 15.990234 A 1.0001 1.0001 0 0 0 16.292969 17.707031 L 23.585938 25 L 16.292969 32.292969 A 1.0001 1.0001 0 1 0 17.707031 33.707031 L 25 26.414062 L 32.292969 33.707031 A 1.0001 1.0001 0 1 0 33.707031 32.292969 L 26.414062 25 L 33.707031 17.707031 A 1.0001 1.0001 0 0 0 32.980469 15.990234 A 1.0001 1.0001 0 0 0 32.292969 16.292969 L 25 23.585938 L 17.707031 16.292969 A 1.0001 1.0001 0 0 0 16.990234 15.990234 z"></path>
+            </svg>
+        </button>
+    </div>
+    <button class="modal-button">Click here </button>
+</div>
+</body>
+
+<script>
+    const body = document.querySelector("body");
+    const modal = document.querySelector(".modal");
+    const modalButton = document.querySelector(".modal-button");
+    const closeButton = document.querySelector(".close-button");
+    const scrollDown = document.querySelector(".scroll-down");
+    let isOpened = false;
+
+    const openModal = () => {
+        modal.classList.add("is-open");
+        body.style.overflow = "hidden";
+    };
+
+    const closeModal = () => {
+        modal.classList.remove("is-open");
+        body.style.overflow = "initial";
+    };
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > window.innerHeight / 3 && !isOpened) {
+            isOpened = true;
+            scrollDown.style.display = "none";
+            openModal();
+        }
+    });
+
+    modalButton.addEventListener("click", openModal);
+    closeButton.addEventListener("click", closeModal);
+
+    document.onkeydown = evt => {
+        evt = evt || window.event;
+        evt.keyCode === 27 ? closeModal() : false;
+    };
+
+</script>
