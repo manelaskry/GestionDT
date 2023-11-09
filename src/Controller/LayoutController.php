@@ -16,11 +16,8 @@ class LayoutController extends AbstractController
         ]);
     }
 
-    #[Route('/popup', name: 'popup')]
-    public function popup(): Response
-    {
-        return $this->render('layout/popup.html.twig', [
-            'controller_name' => 'LayoutController',
-        ]);
-    }
+
+   
+
 }
+

@@ -11,67 +11,66 @@
 </head>
 
 <body>
-<div class="nav">
-    <span class="logo">TaskPlanner</span>
-</div>
 <div class="sidebar close">
     <div class="logo-details">
         <i class='bx bxl-c-plus-plus'></i>
         <span class="logo_name">TaskPlanner</span>
     </div>
     <ul class="nav-links">
+        <li><i class='bx bx-menu' ></i></li>
         <li>
             <a href="#">
                 <i class='bx bx-grid-alt' ></i>
-                <span class="link_name">Acceuil</span>
+                <span class="link_name">Espaces de travail</span>
+                <i  class='bx  bx-plus arrow'></i>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">Category</a></li>
+                <li><a class="link_name" href="#">1 task</a></li>
             </ul>
         </li>
         <li>
             <div class="iocn-link">
                 <a href="#">
                     <i class='bx bx-collection' ></i>
-                    <span class="link_name">Category</span>
+                    <span class="link_name">1 task</span>
                 </a>
                 <i class='bx bxs-chevron-down arrow' ></i>
             </div>
             <ul class="sub-menu">
-                <li><a class="link_name" href="#">Category</a></li>
-                <li><a href="#">HTML & CSS</a></li>
-                <li><a href="#">JavaScript</a></li>
-                <li><a href="#">PHP & MySQL</a></li>
+                <li><a class="link_name" href="#">1 task</a></li>
+                <li><a href="#">Les tableaux</a></li>
+                <li><a href="#">Les membres</a></li>
+                <li><a href="#">Parametres</a></li>
             </ul>
         </li>
         <li>
             <div class="iocn-link">
                 <a href="#">
-                    <i class='bx bx-book-alt' ></i>
-                    <span class="link_name">Posts</span>
+                    <i class='bx bx-collection' ></i>
+                    <span class="link_name">2 Task</span>
                 </a>
                 <i class='bx bxs-chevron-down arrow' ></i>
             </div>
             <ul class="sub-menu">
-                <li><a class="link_name" href="#">Posts</a></li>
-                <li><a href="#">Web Design</a></li>
-                <li><a href="#">Login Form</a></li>
-                <li><a href="#">Card Design</a></li>
+                <li><a class="link_name" href="#">2 Task</a></li>
+                <li><a href="#">Les tableaux</a></li>
+                <li><a href="#">Les membres</a></li>
+                <li><a href="#">Parametres</a></li>
             </ul>
         </li>
         <li>
             <div class="iocn-link">
                 <a href="#">
-                    <i class='bx bx-plug' ></i>
-                    <span class="link_name">Plugins</span>
+                    <i class='bx bx-collection' ></i>
+                    <span class="link_name">3 Task</span>
                 </a>
                 <i class='bx bxs-chevron-down arrow' ></i>
             </div>
             <ul class="sub-menu">
-                <li><a class="link_name" href="#">Plugins</a></li>
-                <li><a href="#">UI Face</a></li>
-                <li><a href="#">Pigments</a></li>
-                <li><a href="#">Box Icons</a></li>
+                <li><a class="link_name" href="#">3 Task</a></li>
+                <li><a href="#">Les tableaux</a></li>
+                <li><a href="#">Les membres</a></li>
+                <li><a href="#">Parametres</a></li>
             </ul>
         </li>
         <li>
@@ -93,13 +92,15 @@
                     <div class="job">Web Desginer</div>
                 </div>
                 <i class='bx bx-log-out' ></i>
+
             </div>
         </li>
     </ul>
 </div>
 <section class="home-section">
     <div class="home-content">
-        <i class='bx bx-menu' ></i>
+
+        {% block section %}hi{% endblock %}
     </div>
 </section>
 <script>
