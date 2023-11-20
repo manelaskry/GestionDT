@@ -8,12 +8,14 @@
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head_link %}
+       link
+    {% endblock %}
+    <title>todo</title>
 </head>
 
 <body>
-<div class="nav">
-    <span class="logo">TaskPlanner</span>
-</div>
+
 <div class="sidebar close">
     <div class="logo-details">
         <i class='bx bxl-c-plus-plus'></i>
