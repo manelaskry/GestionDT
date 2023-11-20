@@ -15,6 +15,13 @@ class LayoutController extends AbstractController
             'controller_name' => 'LayoutController',
         ]);
     }
+    #[Route('/sign', name: 'app_sign')]
+    public function sign(): Response
+    {
+        return $this->render('layout/sign.html.twig', [
+            'controller_name' => 'LayoutController',
+        ]);
+    }
 
 
    
