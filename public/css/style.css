@@ -1,10 +1,12 @@
 /* Google Fonts Import Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lora:ital,wght@1,400;1,500;1,600;1,700&family=Varela&family=Varela+Round&family=Work+Sans:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lora:ital,wght@1,400;1,500;1,600;1,700&family=Roboto&family=Varela&family=Varela+Round&family=Work+Sans:ital,wght@0,200;1,200&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif  , 'Josefin Sans','Roboto';
 }
 .sidebar{
     position: fixed;
@@ -216,7 +218,7 @@
 }
 .home-section{
     position: relative;
-    background: #E4E9F7;
+    background: #ffffff;/* oumaima badlet l couleur li kenet hateta manel */
     height: 100vh;
     left: 260px;
     width: calc(100% - 260px);
@@ -240,27 +242,188 @@
     margin: 0 15px;
     cursor: pointer;
 }
-.home-section .home-content .text{
+ .home-content .text{
     font-size: 26px;
     font-weight: 600;
+
 }
+/* CSS SECTION */
+.home-section .dash-content{
+    padding-top: 250px;
+}
+.square-icon {
+    width: 75px; /* Largeur du carré */
+    height: 70px; /* Hauteur du carré */
+    text-align: center;
+    line-height: 70px; /* Pour centrer le contenu verticalement */
+    font-size: 30px; /* Taille de la police du "G" */
+    background-color: #296920; /* Couleur de fond du carré */
+    color: #ffffff; /* Couleur du texte "G" */
+    font-weight: 500;
+    border-radius: 12px;
+}
+.dash-content .title{
+    display: flex;
+    align-items: center;
+    margin: 70px 0 30px 0;
+
+}
+.dash-content .title .text{
+    font-size: 24px;
+    font-weight: 500;
+    color: #1d1b31;
+    margin: 5px 50px 30px 10px;
+}
+/* Styles pour le conteneur <span> */
+span {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* Marge supérieure de 10 pixels */
+    font-size: 16px; /* Taille de la police */
+}
+
+/* Styles pour l'icône <i> à l'intérieur du <span> */
+span i {
+    font-size: 19px; /* Taille de la police de l'icône */
+    margin: 5px 0; /* Marge à droite de l'icône */
+    color: #1d1b31; /* Couleur de l'icône (orange dans cet exemple) */
+    margin-left: -7.3cm;
+    margin-top: 30px;
+}
+
+/* Styles pour le lien <a> à l'intérieur du <span> */
+span a {
+    text-decoration: none; /* Supprimer le soulignement du lien */
+    color: #000000; /* Couleur du texte du lien (bleu dans cet exemple) */
+    font-weight: 600; /* Poids de la police du lien */
+    padding: 5px 0;
+    margin-right: 50px;
+    margin-top: 30px;
+
+}
+.tabETbox{
+    margin-left: 20px;
+}
+
+.tab i {
+    /* Styles pour l'icône */
+    color: #1d1b31; /* Couleur de l'icône */
+     font-size: 25px;
+}
+
+.tab  {
+    /* Styles pour le lien "vos tableaux" */
+    text-decoration: none; /* Supprimer le soulignement du lien */
+    color: #1d1b31 ;/* Couleur du texte du lien */
+    font-weight: 800;/* Poids de la police du lien */
+
+}
+hr{
+    margin-top: 15px ;
+    margin-bottom: 20px;
+
+}
+.dash-content .boxes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.dash-content .boxes a{
+    text-decoration: none;
+}
+.dash-content .boxes .box{
+    display: flex;
+    flex-direction:column ;
+    align-items: flex-start; /* Aligner le contenu en haut */
+    border-radius: 12px;
+    width: calc(100% / 3- 15px);
+    padding: 15px;
+    background-color:#3b82f6 ;
+    text-align: center; /* Pour centrer le texte horizontalement */
+    min-height: 150px;  /* Hauteur minimale de la boîte */
+    min-width: 250px;   /* Largeur minimale de la boîte */
+    margin: 10px 0;
+
+}
+.boxes .box.box1{
+    background-color: #3A98B9 ;
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 400;
+}
+.boxes .box.box1 a{
+    color: #000000;
+}
+.boxes .box.box2{
+    background-color: #FFF1DC ;
+    color: #000000 ;
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 400;
+}
+.boxes .box.box2 a{
+    color: #000000;
+}
+.boxes .box.box3{
+    background-color: #E8D5C4 ;
+    color: #000000 ;
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 400;
+}
+.boxes .box.box3 a{
+    color: #000000;
+}
+.boxes .box.box4 {
+    background-color: #EEEEEE;
+    display: flex; /* Utilisation de flexbox pour centrer le contenu */
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    color: #000000;
+    font-family:'Josefin Sans';
+    font-size: 17px;
+    font-weight: 100;
+    text-decoration: none;
+}
+.boxes .box.box4 a{
+    color: #6b6b6b;
+    margin-top:13px;
+
+}
+.boxes .box.box4 i{
+    color: #6B6B6BFF;
+}
+
+
+
+
+
+
+
+
 @media (max-width: 400px) {
-    .sidebar.close .nav-links li .sub-menu{
+    .sidebar.close .nav-links li .sub-menu {
         display: none;
     }
-    .sidebar{
+
+    .sidebar {
         width: 78px;
     }
-    .sidebar.close{
+
+    .sidebar.close {
         width: 0;
     }
-    .home-section{
+
+    .home-section {
         left: 78px;
         width: calc(100% - 78px);
         z-index: 100;
     }
-    .sidebar.close ~ .home-section{
+
+    .sidebar.close ~ .home-section {
         width: 100%;
         left: 0;
     }
+
 }
