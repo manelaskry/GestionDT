@@ -1,0 +1,42 @@
+{% extends "layout/index.html.twig" %}
+{% block head_link %}
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+{% endblock %}
+{% block section %}
+<div class="dash-content">
+    <div class="overview">
+        <div class="title">
+            <div class="square-icon">
+                G
+            </div>
+            <span class="text">Gestion du contrat</span>
+               <span>
+                <i class='bx bxs-lock'></i>
+                <a href="#">Prive</a>
+               </span>
+        </div>
+        <hr>
+        <div class="tabETbox">
+            <div class="tab">
+            <i class='bx bx-user'></i>
+            Vos tableaux
+            </div>
+            <div class="boxes">
+                <div class="box box1">
+                <a href="#">Backend</a>
+                </div>
+                <div class="box box2">
+                    <a href="#">Fontend</a>
+                </div>
+                <div class="box box3">
+                    <a href="#">Database</a>
+                </div>
+                <div class="box box4">
+                    <a href="#">Créer un tableau
+                        </br><i class='bx bx-add-to-queue'></i></a>
+                </div>
+            </div>
+        </div>
+        </div>
+</div>
+{% endblock %}
