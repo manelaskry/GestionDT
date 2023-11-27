@@ -17,6 +17,7 @@ class LayoutController extends AbstractController
     }
 
 
+
     #[Route('/popup', name: 'popup')]
     public function popup(): Response
     {
@@ -24,6 +25,17 @@ class LayoutController extends AbstractController
             'controller_name' => 'LayoutController',
         ]);
     }
+
+
+    #[Route('/sign', name: 'app_sign')]
+    public function sign(): Response
+    {
+        return $this->render('layout/sign.html.twig', [
+
+            'controller_name' => 'LayoutController',
+        ]);
+    }
+
 
     #[Route('/addtable', name: 'addtable')]
     public function addtable(): Response
@@ -33,7 +45,9 @@ class LayoutController extends AbstractController
         ]);
     }
 
+
    
+
 
 }
 

@@ -8,16 +8,20 @@
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head_link %}
+       link
+    {% endblock %}
+    <title>todo</title>
 </head>
 
 <body>
+
 <div class="sidebar close">
     <div class="logo-details">
-        <i class='bx bxl-c-plus-plus'></i>
+        <i class='bx bxl-c-plus-plus bx-menu'></i>
         <span class="logo_name">TaskPlanner</span>
     </div>
     <ul class="nav-links">
-        <li><i class='bx bx-menu' ></i></li>
         <li>
             <a href="#">
                 <i class='bx bx-grid-alt' ></i>
@@ -100,7 +104,9 @@
 <section class="home-section">
     <div class="home-content">
 
+
         {% block section %}hi{% endblock %}
+
     </div>
 </section>
 <script>
