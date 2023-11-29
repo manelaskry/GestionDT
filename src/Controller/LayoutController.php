@@ -44,6 +44,20 @@ class LayoutController extends AbstractController
             'controller_name' => 'LayoutController',
         ]);
     }
+    #[Route('/tab', name: 'app_tableau')]
+    public function tableau(): Response
+    {
+        return $this->render('layout/tableau.html.twig', [
+            'controller_name' => 'LayoutController',
+        ]);
+    }
+    #[Route('/popup', name: 'app_popup')]
+    public function popup(): Response
+    {
+        return $this->render('layout/popup.html.twig', [
+            'controller_name' => 'LayoutController',
+        ]);
+    }
 
 
    

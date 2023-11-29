@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/popup.css') }}">
 
     {% block head_link %}
-        link
+    link
     {% endblock %}
     <title>todo</title>
 </head>
@@ -24,15 +24,16 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a>
-                <i class='bx bx-grid-alt'></i>
+            <a >
+                <i class='bx bx-grid-alt' ></i>
                 <span class="link_name">Espaces de travail</span>
-                <i class='bx bx-plus arrow'></i>
+                <i  class='bx  bx-plus arrow'></i>
             </a>
             <ul class="sub-menu blank">
                 <li><a class="link_name" href="#">1 task</a></li>
             </ul>
         </li>
+        <!-- ... (your other menu items) ... -->
         <li>
             <div class="iocn-link">
                 <a href="#">
@@ -125,9 +126,9 @@
                 <select name="projet"  class="select" id="projet"  >
                     <option disabled selected ></option>
                     <option value="Education" class="option">Education</option>
-                    <option value="Education" class="option">Entreprise</option>
-                    <option value="Education" class="option">Ingenieur</option>
-                    <option value="Education" class="option">Autre</option>
+                    <option value="Entreprise" class="option">Entreprise</option>
+                    <option value="Ingenieur" class="option">Ingenieur</option>
+                    <option value="Autre" class="option">Autre</option>
                 </select>
             </div>
             <div class="input-block " id="Description">
@@ -147,7 +148,7 @@
             </svg>
         </button>
     </div>
-
+    <button class="modal-button">Click here </button>
 </div>
 
 <script>
