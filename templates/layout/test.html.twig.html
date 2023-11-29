@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title> Drop Down Sidebar Menu | CodingLab </title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/popup.css') }}">
+
+    {% block head_link %}
+    link
+    {% endblock %}
+    <title>todo</title>
+</head>
+
+<body>
+
+<div class="sidebar close">
+    <div class="logo-details">
+        <i class='bx bxl-c-plus-plus bx-menu'></i>
+        <span class="logo_name">TaskPlanner</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a >
+                <i class='bx bx-grid-alt' ></i>
+                <span class="link_name">Espaces de travail</span>
+                <i  class='bx  bx-plus arrow'></i>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">1 task</a></li>
+            </ul>
+        </li>
+        <!-- ... (your other menu items) ... -->
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-collection' ></i>
+                    <span class="link_name">1 task</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">1 task</a></li>
+                <li><a href="#">Les tableaux</a></li>
+                <li><a href="#">Les membres</a></li>
+                <li><a href="#">Parametres</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-collection' ></i>
+                    <span class="link_name">2 Task</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">2 Task</a></li>
+                <li><a href="#">Les tableaux</a></li>
+                <li><a href="#">Les membres</a></li>
+                <li><a href="#">Parametres</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-collection' ></i>
+                    <span class="link_name">3 Task</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">3 Task</a></li>
+                <li><a href="#">Les tableaux</a></li>
+                <li><a href="#">Les membres</a></li>
+                <li><a href="#">Parametres</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-cog' ></i>
+                <span class="link_name">Setting</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Setting</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="profile-details">
+                <div class="profile-content">
+                    <img src="image/profile.jpg" alt="profileImg">
+                </div>
+                <div class="name-job">
+                    <div class="profile_name">Prem Shahi</div>
+                    <div class="job">Web Desginer</div>
+                </div>
+                <i class='bx bx-log-out' ></i>
+
+            </div>
+        </li>
+    </ul>
+</div>
+
+<section class="home-section">
+    <div class="home-content">
+        {% block section %}hi{% endblock %}
+    </div>
+</section>
+
+<!-- Popup HTML -->
+<div class="modal" id="popupModal">
+    <div class="modal-container">
+        <div class="modal-left">
+            <h1 class="modal-title">Welcome!</h1>
+            <p class="modal-desc">Stimulez votre productivité en facilitant l'accès aux tableaux pour tous au même endroit.</p>
+            <div class="input-block">
+                <label for="projet" class="input-label">Nom du projet</label>
+                <input type="text" name="projet" id="projet" placeholder="Name...">
+            </div>
+
+            <div  class="input-block">
+                <label for="choisir" class="input-label">type d'espace de travail</label>
+                <select name="projet"  class="select" id="projet"  >
+                    <option disabled selected ></option>
+                    <option value="Education" class="option">Education</option>
+                    <option value="Entreprise" class="option">Entreprise</option>
+                    <option value="Ingenieur" class="option">Ingenieur</option>
+                    <option value="Autre" class="option">Autre</option>
+                </select>
+            </div>
+            <div class="input-block " id="Description">
+                <label for="Description" class="input-label">Description de l'espace de travail *</label>
+                <input type="text" name="Description"  placeholder="Description...">
+            </div>
+            <div class="modal-buttons">
+                <button class="input-button">Continuer</button>
+            </div>
+        </div>
+        <div class="modal-right">
+            <img src="https://images.ctfassets.net/rz1oowkt5gyp/75rDABL8fyMtNLlUAtBxrg/c5e145977a86c41c47e17c69410c64f7/TrelloUICollage_4x.png?w=540" alt="">
+        </div>
+        <button class="icon-button close-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                <path d="M 25 3 C 12.86158 3 3 12.86158 3 25 C 3 37.13842 12.86158 47 25 47 C 37.13842 47 47 37.13842 47 25 C 47 12.86158 37.13842 3 25 3 z M 25 5 C 36.05754 5 45 13.94246 45 25 C 45 36.05754 36.05754 45 25 45 C 13.94246 45 5 36.05754 5 25 C 5 13.94246 13.94246 5 25 5 z M 16.990234 15.990234 A 1.0001 1.0001 0 0 0 16.292969 17.707031 L 23.585938 25 L 16.292969 32.292969 A 1.0001 1.0001 0 1 0 17.707031 33.707031 L 25 26.414062 L 32.292969 33.707031 A 1.0001 1.0001 0 1 0 33.707031 32.292969 L 26.414062 25 L 33.707031 17.707031 A 1.0001 1.0001 0 0 0 32.980469 15.990234 A 1.0001 1.0001 0 0 0 32.292969 16.292969 L 25 23.585938 L 17.707031 16.292969 A 1.0001 1.0001 0 0 0 16.990234 15.990234 z"></path>
+            </svg>
+        </button>
+    </div>
+    <button class="modal-button">Click here </button>
+</div>
+
+<script>
+    let arrow = document.querySelectorAll(".arrow");
+    for (var i = 0; i < arrow.length; i++) {
+        arrow[i].addEventListener("click", (e) => {
+            let arrowParent = e.target.parentElement.parentElement; // selecting the main parent of the arrow
+            arrowParent.classList.toggle("showMenu");
+
+            // Open the popup when the arrow is clicked
+            document.getElementById('popupModal').classList.add('is-open');
+        });
+    }
+
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".bx-menu");
+
+    sidebarBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+    });
+
+    // Close the popup when the close button is clicked
+    document.querySelector(".close-button").addEventListener("click", () => {
+        document.getElementById('popupModal').classList.remove('is-open');
+    });
+
+    // Additional code for the modal button (optional)
+    document.querySelector(".modal-button").addEventListener("click", () => {
+        document.getElementById('popupModal').classList.add('is-open');
+    });
+</script>
+</body>
+</html>
