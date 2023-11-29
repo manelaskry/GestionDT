@@ -250,6 +250,7 @@
 /* CSS SECTION */
 .home-section .dash-content{
     padding-top: 250px;
+    padding-left: 70px;
 }
 .square-icon {
     width: 75px; /* Largeur du carré */

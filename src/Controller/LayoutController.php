@@ -18,7 +18,7 @@ class LayoutController extends AbstractController
 
 
 
-    
+
 
 
     #[Route('/sign', name: 'app_sign')]
