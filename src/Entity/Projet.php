@@ -15,7 +15,7 @@ class Projet
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\ManyToMany(targetEntity: user::class, inversedBy: 'projets')]
+    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'projets')]
     private Collection $users;
 
     #[ORM\Column(length: 255)]
@@ -41,14 +41,14 @@ class Projet
     }
 
     /**
-     * @return Collection<int, user>
+     * @return Collection<int, User>
      */
     public function getUsers(): Collection
     {
         return $this->users;
     }
 
-    public function addUser(user $user): static
+    public function addUser(User $user): static
     {
         if (!$this->users->contains($user)) {
             $this->users->add($user);
@@ -57,7 +57,7 @@ class Projet
         return $this;
     }
 
-    public function removeUser(user $user): static
+    public function removeUser(User $user): static
     {
         $this->users->removeElement($user);
 

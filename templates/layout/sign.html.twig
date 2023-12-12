@@ -44,25 +44,25 @@
 
         <div class="signUp">
             <h1 class="title">SIGN UP</h1>
-            <form action="{{ path('app_adduser') }}" method="post">
-                {{ form_widget(SignupType) }}
+            <form action="">
                 <div class="input">
-                    {{ form_widget(form.username, { 'attr': {'placeholder': 'Name'} }) }}
-                    {{ form_label(form.username) }}
+                    <input type="text" placeholder="Name">
+                    <label for="">Name</label>
                 </div>
                 <div class="input">
-                    {{ form_widget(form.email, { 'attr': {'placeholder': 'Email'} }) }}
-                    {{ form_label(form.email) }}
+                    <input type="text" placeholder="Email">
+                    <label for="">Email</label>
                 </div>
                 <div class="input">
-                    {{ form_widget(form.password, { 'attr': {'placeholder': 'Password'} }) }}
-                    {{ form_label(form.password) }}
+                    <input type="password" placeholder="Password">
+                    <label for="">Password</label>
                 </div>
-                <button class="formButton" type="submit">Sign up</button>
+                <button class="formButton">Sign up</button>
             </form>
+
+
             <!-- signature -->
         </div>
-
     </div>
 
     <div class="main"></div>

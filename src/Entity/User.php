@@ -2,51 +2,39 @@
 
 namespace App\Entity;
 
-use App\Repository\FormsigninRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
-#[ORM\Entity(repositoryClass: FormsigninRepository::class)]
-class user
+#[ORM\Entity(repositoryClass: UserRepository::class)]
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $username = null;
-
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column]
+    private array $roles = [];
+
+    /**
+     * @var string The hashed password
+     */
+    #[ORM\Column]
     private ?string $password = null;
 
-    #[ORM\ManyToMany(targetEntity: Projet::class, mappedBy: 'users')]
-    private Collection $projets;
-
-    public function __construct()
-    {
-        $this->projets = new ArrayCollection();
-    }
+    #[ORM\Column(type: 'boolean')]
+    private $isVerified = false;
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getUsername(): ?string
-    {
-        return $this->username;
-    }
-
-    public function setUsername(string $username): static
-    {
-        $this->username = $username;
-
-        return $this;
     }
 
     public function getEmail(): ?string
@@ -61,7 +49,39 @@ class user
         return $this;
     }
 
-    public function getPassword(): ?string
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): static
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
+    public function getPassword(): string
     {
         return $this->password;
     }
@@ -74,28 +94,22 @@ class user
     }
 
     /**
-     * @return Collection<int, Projet>
+     * @see UserInterface
      */
-    public function getProjets(): Collection
+    public function eraseCredentials(): void
     {
-        return $this->projets;
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
-    public function addProjet(Projet $projet): static
+    public function isVerified(): bool
     {
-        if (!$this->projets->contains($projet)) {
-            $this->projets->add($projet);
-            $projet->addUser($this);
-        }
-
-        return $this;
+        return $this->isVerified;
     }
 
-    public function removeProjet(Projet $projet): static
+    public function setIsVerified(bool $isVerified): static
     {
-        if ($this->projets->removeElement($projet)) {
-            $projet->removeUser($this);
-        }
+        $this->isVerified = $isVerified;
 
         return $this;
     }

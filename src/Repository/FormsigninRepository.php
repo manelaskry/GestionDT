@@ -2,23 +2,23 @@
 
 namespace App\Repository;
 
-use App\Entity\user;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<user>
+ * @extends ServiceEntityRepository<User>
  *
- * @method user|null find($id, $lockMode = null, $lockVersion = null)
- * @method user|null findOneBy(array $criteria, array $orderBy = null)
- * @method user[]    findAll()
- * @method user[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method User|null find($id, $lockMode = null, $lockVersion = null)
+ * @method User|null findOneBy(array $criteria, array $orderBy = null)
+ * @method User[]    findAll()
+ * @method User[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class FormsigninRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, user::class);
+        parent::__construct($registry, User::class);
     }
 
 //    /**
