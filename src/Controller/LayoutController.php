@@ -15,32 +15,31 @@ class LayoutController extends AbstractController
             'controller_name' => 'LayoutController',
         ]);
     }
-
-
-
-
-
-
-
-
+    #[Route('/sign', name: 'app_sign')]
+    public function sign(): Response
+    {
+        return $this->render('sign/sign.html.twig', [
+            'controller_name' => 'LayoutController',
+        ]);
+    }
     #[Route('/addtable', name: 'addtable')]
     public function addtable(): Response
     {
-        return $this->render('layout/popupTable.html.twig', [
+        return $this->render('popupTable/popupTable.html.twig', [
             'controller_name' => 'LayoutController',
         ]);
     }
     #[Route('/tab', name: 'app_tableau')]
     public function tableau(): Response
     {
-        return $this->render('layout/tableau.html.twig', [
+        return $this->render('tableau/tableau.html.twig', [
             'controller_name' => 'LayoutController',
         ]);
     }
     #[Route('/popup', name: 'app_popup')]
     public function popup(): Response
     {
-        return $this->render('layout/popup.html.twig', [
+        return $this->render('popup/popup.html.twig', [
             'controller_name' => 'LayoutController',
         ]);
     }
