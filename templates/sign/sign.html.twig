@@ -44,25 +44,25 @@
 
         <div class="signUp">
             <h1 class="title">SIGN UP</h1>
-            <form action="">
+            <form action="{{ path('app_sign') }}" method="post">
+                {{ form_start(registrationForm) }}
                 <div class="input">
-                    <input type="text" placeholder="Name">
-                    <label for="">Name</label>
+                    {{ form_row(registrationForm.username, { 'attr': {'placeholder': 'Name'} }) }}
+                    {{ form_label(registrationForm.username) }}
                 </div>
                 <div class="input">
-                    <input type="text" placeholder="Email">
-                    <label for="">Email</label>
+                    {{ form_row(registrationForm.email, { 'attr': {'placeholder': 'Email'} }) }}
+                    {{ form_label(registrationForm.email) }}
                 </div>
                 <div class="input">
-                    <input type="password" placeholder="Password">
-                    <label for="">Password</label>
+                    {{ form_row(registrationForm.plainPassword, { 'attr': {'placeholder': 'Password'} }) }}
+                    {{ form_label(registrationForm.plainPassword) }}
                 </div>
-                <button class="formButton">Sign up</button>
+                <button type="submit" class="formButton">Sign up</button>
+                {{ form_end(registrationForm) }}
             </form>
-
-
-            <!-- signature -->
         </div>
+
     </div>
 
     <div class="main"></div>
