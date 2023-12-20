@@ -90,10 +90,10 @@
         <li>
             <div class="profile-details">
                 <div class="profile-content">
-                    <img src="image/profile.jpg" alt="profileImg">
+                    <img src="{{ asset('image/profile1.jpg') }}" alt="profileImg">
                 </div>
                 <div class="name-job">
-                    <div class="profile_name">Prem Shahi</div>
+                    <div class="profile_name">{{ app.user.Username }}</div>
                     <div class="job">Web Desginer</div>
                 </div>
                 <a href="{{ path('app_logout') }}">

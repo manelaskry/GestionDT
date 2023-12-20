@@ -23,15 +23,21 @@
         </div>
         <div class="signIn">
             <h1 class="title">Welcome back</h1>
-            <form action="">
+
+
+            <form method="post">
                 <div class="input">
-                    <input type="text" placeholder="Email">
+                    <input type="email" placeholder="Email"  name="email" id="inputEmail"  autocomplete="email" required autofocus>
                     <label for="">Email</label>
                 </div>
                 <div class="input">
-                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Password" name="password" id="inputPassword"  autocomplete="current-password" required>
                     <label for="">Password</label>
                 </div>
+
+                <input type="hidden" name="_csrf_token"
+                       value="{{ csrf_token('authenticate') }}"
+                >
 
                 <a href="" class="link">Forgot password?</a>
 
